@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"eslint.debug": true,
+		"eslint.format.enable": false,
+		"editor.formatOnSave": true,
+	}
+}
