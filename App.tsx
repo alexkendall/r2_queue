@@ -1,26 +1,14 @@
-import { TouchableOpacity, View, Text, StyleSheet } from 'react-native'
-import { create } from 'zustand'
-import {
-    Auth,
-    Player,
-    MusicKit,
-    useCurrentSong,
-    useIsPlaying,
-} from '@lomray/react-native-apple-music'
-import { useCallback } from 'react'
+import { StyleSheet } from 'react-native'
 import Navigation from './src/navigation'
+import { Provider } from 'react-redux'
+import { store } from './src/redux/store'
 
 export const App = () => {
-    const authorize = async () => {
-        try {
-            const authStatus = await Auth.authorize()
-            console.log('Authorization Status:', authStatus)
-        } catch (error) {
-            console.error('Authorization failed:', error)
-        }
-    }
-
-    return <Navigation />
+    return (
+        <Provider store={store}>
+            <Navigation />
+        </Provider>
+    )
 }
 
 const styles = StyleSheet.create({
